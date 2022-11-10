@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="upper-wrap">
+          <img class="background" src="" alt="partly-cloudy" id="image" />
+          <div class="upper">
+            <div class="input-group search-row">
+              <input
+                type="search"
+                id="city-enter"
+                class="form-control search-form search-bar"
+                placeholder="Enter city name..."
+                autocomplete="off"
+              />
+              <span class="input-group-btn search-button">
+                <button
+                  type="submit"
+                  id="search-city"
+                  class="btn btn-primary search-button"
+                  style="
+                    --bs-btn-padding-y: 0.375rem;
+                    --bs-btn-padding-x: 0.75rem;
+                    --bs-btn-font-size: 1rem;
+                  "
+                >
+                  Search
+                </button>
+              </span>
+              <span class="input-group-btn current-button">
+                <button
+                  type="submit"
+                  id="current-location"
+                  class="btn btn-primary current-button"
+                  style="
+                    --bs-btn-padding-y: 0.375rem;
+                    --bs-btn-padding-x: 0.75rem;
+                    --bs-btn-font-size: 1rem;
+                  "
+                >
+                  Current
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
