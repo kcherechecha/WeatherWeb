@@ -50,3 +50,27 @@
   border-radius: 20px !important;
   font-size: 14px !important;
 }
+
+.city-name {
+  font-size: 45px;
+  margin: 5px auto;
+  text-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.condition {
+  margin: 5px auto;
+}
+.condition::first-letter {
+  text-transform: capitalize;
+}
+
+.temperature {
+  font-weight: 400 !important;
+  font-size: 32px;
+  margin: 20px auto;
+}
+.info {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 10px;
+}
