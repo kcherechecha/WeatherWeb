@@ -34,6 +34,47 @@ function display(temperature) {
   showTemp.innerHTML = `${convertTemp}°C`;
   let conditionChange = document.querySelector("#condition");
   conditionChange.innerHTML = `${temperature.data.weather[0].description}`;
+  if (temperature.data.weather[0].main === "Thunderstorm") {
+    document.querySelector("#image").src = "img/thunderstorm.png";
+    document.getElementById("#image").style.opacity = 0.5;
+  }
+  if (temperature.data.weather[0].main === "Clear") {
+    document.querySelector("#image").src = "img/clear sky.jpg";
+  }
+  if (temperature.data.weather[0].main === "Clouds") {
+    if (
+      temperature.data.weather[0].description === "few clouds" ||
+      temperature.data.weather[0].description === "scattered clouds"
+    ) {
+      document.querySelector("#image").src = "img/partlycloudy.jpg";
+    } else {
+      document.querySelector("#image").src = "img/cloudy.jpg";
+    }
+  }
+  if (temperature.data.weather[0].main === "Rain") {
+    document.querySelector("#image").src = "img/rainy.jpg";
+    document.getElementById("#image").style.opacity = "0.5";
+  }
+  if (temperature.data.weather[0].main === "Snow") {
+    document.querySelector("#image").src = "img/snowy.jpg";
+  }
+  if (temperature.data.weather[0].main === "Drizzle") {
+    document.querySelector("#image").src = "img/rainy.jpg";
+  }
+  if (
+    temperature.data.weather[0].main === "Mist" ||
+    temperature.data.weather[0].main === "Smoke" ||
+    temperature.data.weather[0].main === "Haze" ||
+    temperature.data.weather[0].main === "Dust" ||
+    temperature.data.weather[0].main === "Fog" ||
+    temperature.data.weather[0].main === "Sand" ||
+    temperature.data.weather[0].main === "Dust" ||
+    temperature.data.weather[0].main === "Ash" ||
+    temperature.data.weather[0].main === "Squall" ||
+    temperature.data.weather[0].main === "Tornado"
+  ) {
+    document.querySelector("#image").src = "img/smog.jpg";
+  }
 }
 
 axios.get(`${start}&units=metric`).then(display);
