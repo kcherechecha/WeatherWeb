@@ -37,3 +37,13 @@ function display(temperature) {
 }
 
 axios.get(`${start}&units=metric`).then(display);
+
+function cityChange(event) {
+  event.preventDefault();
+  axios
+    .get(`${apiUrl}q=${cityEnter.value}&appid=${apiKey}&units=metric`)
+    .then(display);
+}
+
+let searchCity = document.querySelector("#search-city");
+searchCity.addEventListener("click", cityChange);
