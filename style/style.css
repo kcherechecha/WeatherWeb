@@ -1,0 +1,29 @@
+.container {
+  font-family: "Montserrat", sans-serif;
+  max-width: 625px !important;
+  margin: 10px auto;
+  width: 80%;
+}
+
+.wrapper {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 6px;
+  border-radius: 10px;
+}
+
+.upper-wrap {
+  overflow: hidden;
+  position: relative;
+  text-align: center;
+  margin: 20px auto;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.background {
+  opacity: 0.4;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+}

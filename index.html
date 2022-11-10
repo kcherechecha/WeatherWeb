@@ -5,18 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather</title>
+    <link rel="stylesheet" href="style/style.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
   </head>
   <body>
     <div class="container">
       <div class="wrapper">
         <div class="upper-wrap">
-          <img class="background" src="" alt="partly-cloudy" id="image" />
+          <img
+            class="background"
+            src="img/partlycloudy.jpg"
+            alt="partly-cloudy"
+            id="image"
+          />
           <div class="upper">
             <div class="input-group search-row">
               <input
@@ -55,6 +71,14 @@
                 </button>
               </span>
             </div>
+            <h1 class="city-name" id="name">Kyiv</h1>
+            <p class="condition" id="date">Date</p>
+            <p class="condition" id="condition">Partly cloudy</p>
+            <p class="condition">
+              <a href="#" class="active" id="conv-to-c">°C</a> |
+              <a href="#" id="conv-to-f">°F</a>
+            </p>
+            <h2 class="temperature" id="temperature">15°C</h2>
           </div>
         </div>
       </div>
