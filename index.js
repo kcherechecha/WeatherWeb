@@ -33,6 +33,7 @@ function display(temperature) {
   let showTemp = document.querySelector("#temperature");
   showTemp.innerHTML = `${convertTemp}°C`;
   let conditionChange = document.querySelector("#condition");
+  document.querySelector("#image").alt = temperature.data.weather[0].main;
   conditionChange.innerHTML = `${temperature.data.weather[0].description}`;
   if (temperature.data.weather[0].main === "Thunderstorm") {
     document.querySelector("#image").src = "img/thunderstorm.png";
@@ -53,7 +54,7 @@ function display(temperature) {
   }
   if (temperature.data.weather[0].main === "Rain") {
     document.querySelector("#image").src = "img/rainy.jpg";
-    document.getElementById("#image").style.opacity = "0.5";
+    // document.getElementById("#image").style.opacity = "0.5";
   }
   if (temperature.data.weather[0].main === "Snow") {
     document.querySelector("#image").src = "img/snowy.jpg";
