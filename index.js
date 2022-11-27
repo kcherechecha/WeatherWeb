@@ -158,22 +158,22 @@ function change(event) {
 let currentCity = document.querySelector("#current-location");
 currentCity.addEventListener("click", change);
 
-let changeToF = document.querySelector("#conv-to-f");
-changeToF.addEventListener("click", function convToFar(event) {
-  event.preventDefault();
-  let Temp = document.getElementById("temperature");
-  changeToF.classList.add("active");
-  changeToC.classList.remove("active");
-  let res = Math.round(convertTemp * 1.8 + 32);
-  Temp.innerHTML = `${res}°F`;
-});
-let changeToC = document.querySelector("#conv-to-c");
-changeToC.addEventListener("click", function convToCel(event) {
-  event.preventDefault();
-  let Temp = document.getElementById("temperature");
-  changeToF.classList.remove("active");
-  changeToC.classList.add("active");
-  Temp.innerHTML = `${convertTemp}°C`;
-});
+// let changeToF = document.querySelector("#conv-to-f");
+// changeToF.addEventListener("click", function convToFar(event) {
+//   event.preventDefault();
+//   let Temp = document.getElementById("temperature");
+//   changeToF.classList.add("active");
+//   changeToC.classList.remove("active");
+//   let res = Math.round(convertTemp * 1.8 + 32);
+//   Temp.innerHTML = `${res}°F`;
+// });
+// let changeToC = document.querySelector("#conv-to-c");
+// changeToC.addEventListener("click", function convToCel(event) {
+//   event.preventDefault();
+//   let Temp = document.getElementById("temperature");
+//   changeToF.classList.remove("active");
+//   changeToC.classList.add("active");
+//   Temp.innerHTML = `${convertTemp}°C`;
+// });
 
-let convertTemp = null;
+// let convertTemp = null;
