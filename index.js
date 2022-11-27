@@ -26,6 +26,55 @@ let start = `https://api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=${apiK
 let cityEnter = document.querySelector("#city-enter");
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?`;
 
+function formatDay(time) {
+  let date = new Date(time * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+  console.log(forecast);
+  let forecastEl = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row forecast">`;
+  forecast.forEach(function (forecastDay, index) {
+    console.log(forecastDay);
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
+    <div class="col-2">
+      <div class="weekday">${formatDay(forecastDay.dt)}</div>
+      <div class="icon">
+        <img
+            src="http://openweathermap.org/img/wn/${
+              forecastDay.weather[0].icon
+            }@2x.png"
+            alt=""
+            width="42"
+          />
+      </div>
+      <div class="temperatures">
+      <span>${Math.round(forecastDay.temp.min)}°C</span>&nbsp;&nbsp;
+      <span>${Math.round(forecastDay.temp.max)}°C</span>
+      </div>
+    </div>
+  `;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastEl.innerHTML = forecastHTML;
+}
+
+function position(position) {
+  let lat = position.lat;
+  let lon = position.lon;
+  let forecastAPI = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+  axios.get(forecastAPI).then(displayForecast);
+}
+
 function display(temperature) {
   let changeCity = document.querySelector("#name");
   changeCity.innerHTML = `${temperature.data.name}`;
@@ -76,6 +125,7 @@ function display(temperature) {
   ) {
     document.querySelector("#image").src = "img/smog.jpg";
   }
+  position(temperature.data.coord);
 }
 
 axios.get(`${start}&units=metric`).then(display);
@@ -90,7 +140,7 @@ function cityChange(event) {
 let searchCity = document.querySelector("#search-city");
 searchCity.addEventListener("click", cityChange);
 
-function position(position) {
+function geoposition(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let url = `${apiUrl}lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
@@ -99,7 +149,7 @@ function position(position) {
 
 function change(event) {
   event.preventDefault();
-  navigator.geolocation.getCurrentPosition(position);
+  navigator.geolocation.getCurrentPosition(geoposition);
 }
 
 let currentCity = document.querySelector("#current-location");

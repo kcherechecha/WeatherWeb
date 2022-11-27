@@ -85,3 +85,29 @@
   text-decoration: none;
   color: black;
 }
+
+.down {
+  margin-top: 25px;
+  padding-bottom: 25px;
+}
+
+.weekday,
+.temperatures,
+.icon {
+  text-align: center;
+}
+
+.icon {
+  margin: 5px auto;
+}
+
+.weekday {
+  font-size: 15px;
+}
+.temperatures {
+  font-size: 12px;
+}
+.forecast {
+  padding-left: 10px;
+  padding-right: 10px;
+}
