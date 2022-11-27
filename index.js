@@ -89,7 +89,7 @@ function display(temperature) {
   conditionChange.innerHTML = `${temperature.data.weather[0].description}`;
   if (temperature.data.weather[0].main === "Thunderstorm") {
     document.querySelector("#image").src = "img/thunderstorm.png";
-    document.getElementById("#image").style.opacity = 0.5;
+    // document.getElementById("#image").style.opacity = 0.5;
   }
   if (temperature.data.weather[0].main === "Clear") {
     document.querySelector("#image").src = "img/clear sky.jpg";
@@ -110,6 +110,7 @@ function display(temperature) {
   }
   if (temperature.data.weather[0].main === "Snow") {
     document.querySelector("#image").src = "img/snowy.jpg";
+    document.getElementById("#image").style.opacity = "0.6";
   }
   if (temperature.data.weather[0].main === "Drizzle") {
     document.querySelector("#image").src = "img/rainy.jpg";
